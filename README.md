@@ -56,3 +56,85 @@ Includo gli script di react e react-dom, inoltre utilizzo lo script di babel che
 </body>
 </html>
 ```
+
+# JSX
+
+E' una estensione della sintassi Java simili a XML:
+
+```
+	<script type="text/babel">
+
+		var HelloWorld = React.createClass({
+			render: function(){
+				return (
+					<div>
+						<h1>Hello World!</h1>
+					</div>
+				);
+			}
+		});
+
+		ReactDOM.render(
+			<HelloWorld />,
+			document.body
+		);
+
+  </script>
+```
+
+Quindi ho creato un componente HelloWorld, che utilizzo con la tag ```<HelloWorld />``` e che visualizzo sul DOM tramite la funzione render di RectDOM.
+
+# Properties
+
+Le properties sono per JSX gli attributi per HTML:
+
+```
+	<script type="text/babel">
+
+		var HelloWorld = React.createClass({
+			render: function(){
+				return (
+					<div>
+						<h1>Hello {this.props.name}}!</h1>
+					</div>
+				);
+			}
+		});
+
+		ReactDOM.render(
+			<HelloWorld name="Lorenzo"/>,
+			document.body
+		);
+
+  </script>
+```
+
+Ovviamente posso fare il render del mio componente su uno specifico elemento HTML, utilizzando il ```document.getElementById('idElemento')```
+
+Se vado su [http://babeljs.io](babeljs.io) posso convertire il mio script in Plain Javascript, ottenendo (ovviamente tolgo lo script di babel nell'head tag e tolgo il type a script):
+
+```
+<script>
+	"use strict";
+
+	var HelloWorld = React.createClass({
+		displayName: "HelloWorld",
+
+		render: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"h1",
+					null,
+					"Hello ",
+					this.props.name,
+					"!"
+				)
+			);
+		}
+	});
+
+	ReactDOM.render(React.createElement(HelloWorld, { name: "Lorenzo" }), document.getElementById('App'));
+</script>
+```
