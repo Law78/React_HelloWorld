@@ -28,7 +28,7 @@ Per lavorare con React, è bene conoscere: HTML, CSS, JS e preferibilmente Boots
 
 # Il primo componente React
 
-Includo gli script di react e react-dom, inoltre utilizzo lo script di babel che rimpiazza, dalla v15.0 JSTransform e quindi non includo più lo script JSXTransformer (dalla v14.0), che cercava, all'interno di HTML, la tag ```<script type="text/jsx">``` da interpretare. Ora avrò una tag del tipo <script type="text/babel">. In questo modo, grazie a Babel, avrò accesso alle novità di ECMAScript2015.
+Includo gli script di react e react-dom, inoltre utilizzo lo script di babel che rimpiazza, dalla v15.0 JSTransform e quindi non includo più lo script JSXTransformer (dalla v14.0), che cercava, all'interno di HTML, la tag ```<script type="text/jsx">``` da interpretare. Ora avrò una tag del tipo ```<script type="text/babel">```. In questo modo, grazie a Babel, avrò accesso alle novità di ECMAScript2015.
 
 ###Starter Kit
 
